@@ -27,9 +27,9 @@ class HttpHelper {
         } 
     }
     
-    class func searchPhotos(latitude: Double, longitude: Double, onSuccess: @escaping FlickrSearchResultsDelegate, onError: @escaping FlickrErrorDelegate) {
+    class func searchPhotos(latitude: Double, longitude: Double, page: Int, onSuccess: @escaping FlickrSearchResultsDelegate, onError: @escaping FlickrErrorDelegate) {
         let apiKey = "903c68ed7fdf1e8a61e327f8415769ce"
-        let endPoint = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&lat=\(latitude)&lon=\(longitude)&format=json"
+        let endPoint = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(apiKey)&lat=\(latitude)&lon=\(longitude)&page=\(page)&format=json"
         if let url = URL(string: endPoint) {
             let task = URLSession.shared.dataTask(with: url) { (data, urlResponse, error) in
                 if let resultData = data {

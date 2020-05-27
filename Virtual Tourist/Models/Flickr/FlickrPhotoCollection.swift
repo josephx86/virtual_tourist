@@ -10,7 +10,7 @@ import Foundation
 
 struct FlickrPhotoCollection: Codable {
     let page: Int
-    let pages: Int
+    let pages: Int32
     let perPage: Int
     let total: String
     let photos: [FlickrPhoto]
